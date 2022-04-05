@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>Sign Up</title>
+</head>
+<body>
+    <p class="logIn-top"></p>
+    <div class="container">
+            <div class="form-holder">
+                <fieldset>
+                    <legend><h1>Register account</h1></legend>
+                    <form action="" method="post" class="form-holders">
+                        {% csrf_token %}
+            
+                        {{form.username}}
+                        {{form.email}}
+                        {{form.password1}}
+                        {{form.password2}}
+                        <!--<input type="text" name="uid" class="form-input" placeholder="Username">
+                        <input type="email" name="email" class="form-input" placeholder="Email">
+                        <input type="password" name="password" class="form-input" placeholder="Password">
+                        <input type="password" name="verify-password" class="form-input" placeholder="Confirm password">--> <br>
+                        <input type="submit" name="" class="form-btn" value="Submit">
+                    </form>
+                    {{form.errors}}
+                </fieldset>
+            </div>
+        <p>Already have an account? <br><a href="{% url 'login' %}">Log in!</a></p>
+    </div>
+	<script>
+		var form_fields = document.getElementsByTagName('input')
+		form_fields[1].placeholder='Username..';
+		form_fields[2].placeholder='Email..';
+		form_fields[3].placeholder='Enter password...';
+		form_fields[4].placeholder='Re-enter Password...';
+
+
+		for (var field in form_fields){	
+			form_fields[field].className += ' form-control'
+		}
+	</script>
+</body>
+</html>

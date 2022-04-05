@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles-home.css' %}">
+    <script type="text/javascript" defer src="/script.js"></script>
+    <title>Home Page</title>
+</head>
+<body>
+    <header class="top">
+        <button href="profile.html" id="profile">profile</button>
+        <button data-modal-target="#modal">inbox</button>
+    </header>
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title">Inbox</div>
+            <button data-close-button class="close-button">&times;</button>    
+        </div>
+        <div class="modal-body">No messages</div>
+    </div>
+    <div id="overlay"></div>
+    
+    <div class="main">
+        <aside>
+            <div class="search">
+                <p>search</p>
+            </div>
+            <div class="discover">
+                <p>discover</p>
+            </div>
+            <div class="trending"> 
+                <p>trending</p>
+            </div>
+        </aside>
+        
+        <div class="container-home">
+            <article>
+                <div class="content-viewport">
+                    <video src=""></video>
+                </div>
+                <div class="content-footer">
+                    <p class="content-posted-by">Erik</p>
+                    <div class="content-footer-info">
+                        <div class="stats">
+                            <p class="comments"> comments</p>
+                            <p class="likes"> likes</p>
+                            <p class="shares"> shares</p>
+                        </div>
+                        <p class="date-posted">July 12 2021</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
